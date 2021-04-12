@@ -35,11 +35,14 @@ export default NextAuth({
           { data: { email }}
         ),
         q.Get(
-          q.Index('user_by_email'),
-          q.Casefold(user.email)
+          q.Match(
+            q.Index('user_by_email'),
+            q.Casefold(user.email)
+            )
           )
         )
       )
+
     
     return true
   } catch {
