@@ -1,12 +1,12 @@
-import styles from "./post.module.scss";
+import styles from "../post.module.scss";
 
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { getSession } from "next-auth/client";
 import { RichText } from "prismic-dom";
-import { getPrismicClient } from "../../services/prismic";
+import { getPrismicClient } from "../../../services/prismic";
 import Head from "next/head";
 
-interface PostProps {
+interface PostPreviewProps {
   post: {
     slug: string;
     title: string;
@@ -15,7 +15,7 @@ interface PostProps {
   };
 }
 
-export default function Post({ post }: PostProps) {
+export default function PostPreview({ post }: PostPreviewProps) {
   return (
     <>
       <Head>
@@ -36,25 +36,10 @@ export default function Post({ post }: PostProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
-  req,
-  params,
-}) => {
-  const session = await getSession({ req });
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params;
 
-  console.log(session);
-
-  if (!session.activeSubscription) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
-  const prismic = getPrismicClient(req);
+  const prismic = getPrismicClient();
 
   const response = await prismic.getByUID("post", String(slug), {});
 
