@@ -49,11 +49,20 @@ yarn dev
 
 ### 1 - Tela Home
 
+![ignews1](https://user-images.githubusercontent.com/36938649/115064683-9759fb00-9ec3-11eb-9edc-3c6db4b9bfaf.png)
+
 ### 2 - Tela de posts para não inscritos
+
+![ignews2](https://user-images.githubusercontent.com/36938649/115064802-c07a8b80-9ec3-11eb-9759-d97ff1c56e71.png)
 
 ### 3 - Tela de pagamento
 
+![ignews3](https://user-images.githubusercontent.com/36938649/115065344-64fccd80-9ec4-11eb-9cbb-daa52f0940a9.png)
+
 ### 4 - Tela de posts para inscritos ativos
+
+![ignews4](https://user-images.githubusercontent.com/36938649/115065444-85c52300-9ec4-11eb-8281-1a4f64541c17.png)
+
 
 ## ⛏️ Ferramentas utilizadas <a name = "ferramentas"></a>
 
@@ -61,3 +70,8 @@ yarn dev
 - [NextJs](https://nextjs.org/) - Web Framework
 - [Prismic](https://prismic.io/) - CMS
 - [Stripe](https://stripe.com/br) - Payment API
+
+
+
+
+
